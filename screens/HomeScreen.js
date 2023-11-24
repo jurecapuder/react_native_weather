@@ -1,10 +1,10 @@
-import { View, Text, SafeAreaView, Image, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, SafeAreaView, Image, TextInput, TouchableOpacity, ScrollView } from 'react-native';
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { theme } from "../theme";
 
 import { MagnifyingGlassIcon } from 'react-native-heroicons/outline';
-import { MapPinIcon } from 'react-native-heroicons/solid';
+import { MapPinIcon, CalendarDaysIcon } from 'react-native-heroicons/solid';
 
 export default function HomeScreen() {
   const [showSearch, toggleSearch] = useState(false);
@@ -152,6 +152,40 @@ export default function HomeScreen() {
               </Text>
             </View>
           </View>
+        </View>
+
+        {/* Upcoming forecast */}
+        <View className="mb-2 space-y-3">
+          <View className="flex-row items-center mx-5 space-x-2">
+            <CalendarDaysIcon
+              size="22"
+              color="white"
+            />
+
+            <Text className="text-white text-base">
+              Daily forecast
+            </Text>
+          </View>
+
+          <ScrollView
+            horizontal
+            contentContainerStyle={{paddingHorizontal: 15}}
+            showsHorizontalScrollIndicator={false}
+          >
+            <View
+              className="flex-1 justify-center items-center w-24 rounded-3xl py-3 space-y-1 mr-4"
+              style={{backgroundColor: theme.bgWhite(0.15)}}
+            >
+              <Image
+                source={require('../assets/images/heavyrain.png')}
+                className="h-11 w-11"
+              />
+
+              <Text className="text-white">
+                Monday
+              </Text>
+            </View>
+          </ScrollView>
         </View>
       </SafeAreaView>
     </View>
