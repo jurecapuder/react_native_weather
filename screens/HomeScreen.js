@@ -7,6 +7,7 @@ import { MagnifyingGlassIcon } from 'react-native-heroicons/outline';
 
 export default function HomeScreen() {
   const [showSearch, toggleSearch] = useState(false);
+  const [locations, setLocations] = useState([1,2,3]);
 
   return (
     <View className="flex-1 relative">
@@ -49,6 +50,27 @@ export default function HomeScreen() {
               />
             </TouchableOpacity>
           </View>
+
+          {
+            locations.length > 0 && showSearch ? (
+              <View className="absolute w-full bg-gray-300 top-16 rounded-3xl">
+                {
+                  locations.map((location, index) => {
+                    return (
+                      <TouchableOpacity
+                        key={index}
+                        className="flex-row items-center border-0 p-3 px-4 mb-1 border-b-2 border-b-gray-400"
+                      >
+                        <Text>
+                          London, United Kingdom
+                        </Text>
+                      </TouchableOpacity>
+                    )
+                  })
+                }
+              </View>
+            ) : null
+          }
         </View>
       </SafeAreaView>
     </View>
