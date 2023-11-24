@@ -105,6 +105,17 @@ export default function HomeScreen() {
               className="w-52 h-52"
             />
           </View>
+
+          {/* Temperature */}
+          <View className="space-y-2">
+            <Text className="text-center font-bold text-white text-6xl ml-5">
+              23&#176;
+            </Text>
+
+            <Text className="text-center text-white text-xl tracking-widest">
+              Partly Cloudy
+            </Text>
+          </View>
         </View>
       </SafeAreaView>
     </View>
