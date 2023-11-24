@@ -4,6 +4,7 @@ import { StatusBar } from 'expo-status-bar';
 import { theme } from "../theme";
 
 import { MagnifyingGlassIcon } from 'react-native-heroicons/outline';
+import { MapPinIcon } from 'react-native-heroicons/solid';
 
 export default function HomeScreen() {
   const [showSearch, toggleSearch] = useState(false);
@@ -61,6 +62,11 @@ export default function HomeScreen() {
                         key={index}
                         className="flex-row items-center border-0 p-3 px-4 mb-1 border-b-2 border-b-gray-400"
                       >
+                        <MapPinIcon
+                          size="20"
+                          color="gray"
+                        />
+
                         <Text>
                           London, United Kingdom
                         </Text>
