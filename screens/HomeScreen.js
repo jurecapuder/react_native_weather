@@ -86,6 +86,18 @@ export default function HomeScreen() {
             ) : null
           }
         </View>
+
+        {/* Forecast section */}
+        <View className="mx-4 flex justify-around flex-1 mb-2">
+          {/* Location */}
+          <Text className="text-white text-center text-2xl font-bold">
+            London,
+
+            <Text className="text-lg font-semibold text-gray-300">
+              United Kingdom
+            </Text>
+          </Text>
+        </View>
       </SafeAreaView>
     </View>
   )
