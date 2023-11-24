@@ -10,6 +10,10 @@ export default function HomeScreen() {
   const [showSearch, toggleSearch] = useState(false);
   const [locations, setLocations] = useState([1,2,3]);
 
+  const handleLocation = (location) => {
+    console.log("location", location);
+  }
+
   return (
     <View className="flex-1 relative">
       <StatusBar style="light" />
@@ -62,6 +66,7 @@ export default function HomeScreen() {
 
                     return (
                       <TouchableOpacity
+                        onPress={() => handleLocation(location)}
                         key={index}
                         className={"flex-row items-center border-0 p-3 px-4 mb-1" + borderClass}
                       >
@@ -70,7 +75,7 @@ export default function HomeScreen() {
                           color="gray"
                         />
 
-                        <Text>
+                        <Text className="text-black text-lg ml-2">
                           London, United Kingdom
                         </Text>
                       </TouchableOpacity>
