@@ -26,7 +26,7 @@ export default function HomeScreen() {
         >
           <View
             className="flex-row justify-end items-center rounded-full"
-            style={{backgroundColor: theme.bgWhite(0.2)}}
+            style={{backgroundColor: showSearch ? theme.bgWhite(0.2) : "transparent"}}
           >
             {
               showSearch ? (
