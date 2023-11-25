@@ -91,7 +91,7 @@ export default function HomeScreen() {
         <View className="mx-4 flex justify-around flex-1 mb-2">
           {/* Location */}
           <Text className="text-white text-center text-2xl font-bold">
-            London,
+            London,&nbsp;
 
             <Text className="text-lg font-semibold text-gray-300">
               United Kingdom
@@ -183,6 +183,10 @@ export default function HomeScreen() {
 
               <Text className="text-white">
                 Monday
+              </Text>
+
+              <Text className="text-white text-xl font-semibold">
+                13&#176;
               </Text>
             </View>
           </ScrollView>
