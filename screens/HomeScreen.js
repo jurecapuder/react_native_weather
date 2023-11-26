@@ -6,6 +6,7 @@ import { debounce } from "lodash";
 
 import { MagnifyingGlassIcon } from 'react-native-heroicons/outline';
 import { MapPinIcon, CalendarDaysIcon } from 'react-native-heroicons/solid';
+import { fetchLocations } from "../api/weather";
 
 export default function HomeScreen() {
   const [showSearch, toggleSearch] = useState(false);
@@ -16,7 +17,12 @@ export default function HomeScreen() {
   }
 
   const handleSearch = value => {
-    console.log("value", value);
+    // Featch locations
+    if (value.length > 2) {
+      fetchLocations({cityName: value}).then(data => {
+        console.log("data", data);
+      })
+    }
   }
 
   const handleTextDebounce = useCallback(debounce(handleSearch, 1200), []);
