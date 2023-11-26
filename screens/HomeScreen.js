@@ -10,7 +10,7 @@ import { fetchLocations } from "../api/weather";
 
 export default function HomeScreen() {
   const [showSearch, toggleSearch] = useState(false);
-  const [locations, setLocations] = useState([1,2,3]);
+  const [locations, setLocations] = useState([1, 2, 3]);
 
   const handleLocation = (location) => {
     console.log("location", location);
@@ -20,7 +20,7 @@ export default function HomeScreen() {
     // Featch locations
     if (value.length > 2) {
       fetchLocations({cityName: value}).then(data => {
-        console.log("data", data);
+        setLocations(data);
       })
     }
   }
