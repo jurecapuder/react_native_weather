@@ -1,4 +1,6 @@
-export const apiKey = "3fd1c308675a4e42a4f112229232611";
+import { API_KEY } from '@env'
+
+export const apiKey = API_KEY;
 
 export const weatherImages = {
   'Partly cloudy': require('../assets/images/partlycloudy.png'),
