@@ -189,6 +189,114 @@ export default function HomeScreen() {
                 13&#176;
               </Text>
             </View>
+
+            <View
+              className="flex-1 justify-center items-center w-24 rounded-3xl py-3 space-y-1 mr-4"
+              style={{backgroundColor: theme.bgWhite(0.15)}}
+            >
+              <Image
+                source={require('../assets/images/heavyrain.png')}
+                className="h-11 w-11"
+              />
+
+              <Text className="text-white">
+                Tuesday
+              </Text>
+
+              <Text className="text-white text-xl font-semibold">
+                13&#176;
+              </Text>
+            </View>
+
+            <View
+              className="flex-1 justify-center items-center w-24 rounded-3xl py-3 space-y-1 mr-4"
+              style={{backgroundColor: theme.bgWhite(0.15)}}
+            >
+              <Image
+                source={require('../assets/images/heavyrain.png')}
+                className="h-11 w-11"
+              />
+
+              <Text className="text-white">
+                Wednesday
+              </Text>
+
+              <Text className="text-white text-xl font-semibold">
+                13&#176;
+              </Text>
+            </View>
+
+            <View
+              className="flex-1 justify-center items-center w-24 rounded-3xl py-3 space-y-1 mr-4"
+              style={{backgroundColor: theme.bgWhite(0.15)}}
+            >
+              <Image
+                source={require('../assets/images/heavyrain.png')}
+                className="h-11 w-11"
+              />
+
+              <Text className="text-white">
+                Thursday
+              </Text>
+
+              <Text className="text-white text-xl font-semibold">
+                13&#176;
+              </Text>
+            </View>
+
+            <View
+              className="flex-1 justify-center items-center w-24 rounded-3xl py-3 space-y-1 mr-4"
+              style={{backgroundColor: theme.bgWhite(0.15)}}
+            >
+              <Image
+                source={require('../assets/images/heavyrain.png')}
+                className="h-11 w-11"
+              />
+
+              <Text className="text-white">
+                Friday
+              </Text>
+
+              <Text className="text-white text-xl font-semibold">
+                13&#176;
+              </Text>
+            </View>
+
+            <View
+              className="flex-1 justify-center items-center w-24 rounded-3xl py-3 space-y-1 mr-4"
+              style={{backgroundColor: theme.bgWhite(0.15)}}
+            >
+              <Image
+                source={require('../assets/images/heavyrain.png')}
+                className="h-11 w-11"
+              />
+
+              <Text className="text-white">
+                Saturday
+              </Text>
+
+              <Text className="text-white text-xl font-semibold">
+                13&#176;
+              </Text>
+            </View>
+
+            <View
+              className="flex-1 justify-center items-center w-24 rounded-3xl py-3 space-y-1 mr-4"
+              style={{backgroundColor: theme.bgWhite(0.15)}}
+            >
+              <Image
+                source={require('../assets/images/heavyrain.png')}
+                className="h-11 w-11"
+              />
+
+              <Text className="text-white">
+                Sunday
+              </Text>
+
+              <Text className="text-white text-xl font-semibold">
+                13&#176;
+              </Text>
+            </View>
           </ScrollView>
         </View>
       </SafeAreaView>
