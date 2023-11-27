@@ -1,5 +1,5 @@
 import { View, Text, SafeAreaView, Image, TextInput, TouchableOpacity, ScrollView } from 'react-native';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { theme } from "../theme";
 import { debounce } from "lodash";
@@ -35,6 +35,19 @@ export default function HomeScreen() {
         setLocations(data);
       })
     }
+  }
+
+  useEffect(() => {
+    fetchMyWeatherData();
+  }, [])
+
+  const fetchMyWeatherData = async () => {
+    fetchWeatherForecast({
+      cityName: "Ljubljana",
+      days: "7"
+    }).then(data => {
+      setWeather(data);
+    })
   }
 
   const handleTextDebounce = useCallback(debounce(handleSearch, 1200), []);
