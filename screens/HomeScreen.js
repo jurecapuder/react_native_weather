@@ -60,7 +60,7 @@ export default function HomeScreen() {
     })
   }
 
-  const handleTextDebounce = useCallback(debounce(handleSearch, 1200), []);
+  const handleTextDebounce = useCallback(debounce(handleSearch, 550), []);
 
   const { current, location } = weather;
 
