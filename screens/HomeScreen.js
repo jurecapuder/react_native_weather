@@ -11,6 +11,7 @@ import { fetchLocations, fetchWeatherForecast } from "../api/weather";
 export default function HomeScreen() {
   const [showSearch, toggleSearch] = useState(false);
   const [locations, setLocations] = useState([]);
+  const [weather, setWeather] = useState({});
 
   const handleLocation = (location) => {
     console.log("location", location);
@@ -21,6 +22,7 @@ export default function HomeScreen() {
       cityName: location.name,
       days: '7'
     }).then(data => {
+      setWeather(data);
       console.log("data", data);
     })
   }
@@ -35,6 +37,8 @@ export default function HomeScreen() {
   }
 
   const handleTextDebounce = useCallback(debounce(handleSearch, 1200), []);
+
+  const { current, location } = weather;
 
   return (
     <View className="flex-1 relative">
@@ -114,10 +118,10 @@ export default function HomeScreen() {
         <View className="mx-4 flex justify-around flex-1 mb-2">
           {/* Location */}
           <Text className="text-white text-center text-2xl font-bold">
-            London,&nbsp;
+            {location?.name},&nbsp;
 
             <Text className="text-lg font-semibold text-gray-300">
-              United Kingdom
+              {location?.country}
             </Text>
           </Text>
 
