@@ -129,7 +129,7 @@ export default function HomeScreen() {
           {/* Weather image */}
           <View className="flex-row justify-center">
             <Image
-              source={weatherImages[current?.condition?.text] || weatherImages['other']}
+              source={weatherImages[current?.condition?.text]}
               className="w-52 h-52"
             />
           </View>
@@ -209,7 +209,7 @@ export default function HomeScreen() {
                     style={{backgroundColor: theme.bgWhite(0.15)}}
                   >
                     <Image
-                      source={require('../assets/images/heavyrain.png')}
+                      source={weatherImages[item?.day?.condition?.text]}
                       className="h-11 w-11"
                     />
 
