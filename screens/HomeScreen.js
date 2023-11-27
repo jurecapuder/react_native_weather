@@ -9,6 +9,7 @@ import { MapPinIcon, CalendarDaysIcon } from 'react-native-heroicons/solid';
 import { fetchLocations, fetchWeatherForecast } from "../api/weather";
 import { weatherImages } from "../constants";
 import * as Progress from 'react-native-progress';
+import { storeData } from "../utils/asyncStorage";
 
 export default function HomeScreen() {
   const [showSearch, toggleSearch] = useState(false);
@@ -28,6 +29,7 @@ export default function HomeScreen() {
     }).then(data => {
       setWeather(data);
       setLoading(false);
+      storeData("city", location.name)
     })
   }
 
@@ -45,8 +47,12 @@ export default function HomeScreen() {
   }, [])
 
   const fetchMyWeatherData = async () => {
+    let myCity = await storeData("city");
+    let cityName = "Ljubljana";
+
+    if (myCity) cityName = myCity;
     fetchWeatherForecast({
-      cityName: "Ljubljana",
+      cityName,
       days: "7"
     }).then(data => {
       setWeather(data);
