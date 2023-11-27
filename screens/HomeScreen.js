@@ -202,6 +202,10 @@ export default function HomeScreen() {
           >
             {
               weather?.forecast?.forecastday?.map((item, index) => {
+                let date = new Date(item.date);
+                let options = { weekday: "long" };
+                let dayName = date.toLocaleDateString("en-UK", options);
+                dayName = dayName.split(",")[0];
                 return (
                   <View
                     key={index}
@@ -214,7 +218,7 @@ export default function HomeScreen() {
                     />
 
                     <Text className="text-white">
-                      {item?.date}
+                      {dayName}
                     </Text>
 
                     <Text className="text-white text-xl font-semibold">
