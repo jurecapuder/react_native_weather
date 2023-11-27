@@ -7,6 +7,7 @@ import { debounce } from "lodash";
 import { MagnifyingGlassIcon } from 'react-native-heroicons/outline';
 import { MapPinIcon, CalendarDaysIcon } from 'react-native-heroicons/solid';
 import { fetchLocations, fetchWeatherForecast } from "../api/weather";
+import { weatherImages } from "../constants";
 
 export default function HomeScreen() {
   const [showSearch, toggleSearch] = useState(false);
@@ -128,8 +129,7 @@ export default function HomeScreen() {
           {/* Weather image */}
           <View className="flex-row justify-center">
             <Image
-              source={{uri: "https:" + current?.condition?.icon}}
-              //source={require('../assets/images/partlycloudy.png')}
+              source={weatherImages[current?.condition?.text] || weatherImages['other']}
               className="w-52 h-52"
             />
           </View>
@@ -154,7 +154,7 @@ export default function HomeScreen() {
               />
 
               <Text className="text-white font-semibold text-base">
-                22 km/h
+                {current?.wind_kph} km/h
               </Text>
             </View>
 
@@ -165,7 +165,7 @@ export default function HomeScreen() {
               />
 
               <Text className="text-white font-semibold text-base">
-                23%
+                {current?.humidity}%
               </Text>
             </View>
 
