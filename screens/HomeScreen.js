@@ -128,7 +128,8 @@ export default function HomeScreen() {
           {/* Weather image */}
           <View className="flex-row justify-center">
             <Image
-              source={require('../assets/images/partlycloudy.png')}
+              source={{uri: "https:" + current?.condition?.icon}}
+              //source={require('../assets/images/partlycloudy.png')}
               className="w-52 h-52"
             />
           </View>
@@ -136,11 +137,11 @@ export default function HomeScreen() {
           {/* Temperature */}
           <View className="space-y-2">
             <Text className="text-center font-bold text-white text-6xl ml-5">
-              23&#176;
+              {current?.temp_c}&#176;
             </Text>
 
             <Text className="text-center text-white text-xl tracking-widest">
-              Partly Cloudy
+              {current?.condition?.text}
             </Text>
           </View>
 
