@@ -1,7 +1,7 @@
-import axios from 'axios';
+import axios from "axios";
 import { apiKey } from "../constants";
 
-const forecastEndpoint = params => `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${params.cityName}&days=${params.days}&aqi=no&alerts=no`;
+const forecastEndpoint = params => `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${params.cityName}&days=${params.days}`;
 
 const locationsEndpoint = params => `https://api.weatherapi.com/v1/search.json?key=${apiKey}&q=${params.cityName}`;
 
@@ -18,14 +18,16 @@ const apiCall = async (endpoint) => {
   } catch (error) {
     console.log(error);
 
-    return null;
+    return {};
   }
 }
 
 export const fetchWeatherForecast = params => {
-  return apiCall(forecastEndpoint(params));
+    let forecastUrl = forecastEndpoint(params);
+    return apiCall(forecastUrl);
 }
 
 export const fetchLocations = params => {
-  return apiCall(locationsEndpoint(params));
+    let locationsUrl = locationsEndpoint(params);
+    return apiCall(locationsUrl);
 }
